@@ -141,21 +141,6 @@ Open http://localhost:3000
 npx prisma studio
 ```
 
-## Deploy to Vercel
-
-1. Push to GitHub
-2. Import repo on vercel.com
-3. Add environment variables in Vercel dashboard:
-   - `DATABASE_URL` — Use Vercel Postgres, Neon, or Supabase
-   - `JWT_SECRET` — A strong random secret
-   - `OPENWEATHER_API_KEY` — Your OpenWeather API key
-   - `NEXT_PUBLIC_APP_URL` — Your Vercel deployment URL
-4. Run migrations against production database:
-
-```bash
-npx prisma migrate deploy
-```
-
 ## API Reference
 
 ### Auth (Public)
