@@ -170,10 +170,10 @@ export default function SigninPage() {
               className="inline-flex items-center gap-3 mb-6"
             >
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-blue-600 flex items-center justify-center shadow-[0_0_20px_rgba(139,92,246,0.5)]">
-                <span className="text-white font-bold text-lg">W</span>
+                <span className="text-white font-bold text-lg">T</span>
               </div>
               <span className="text-white font-semibold text-xl">
-                WeatherVision
+                TaroMausam
               </span>
             </Link>
 

@@ -94,7 +94,7 @@ export default function LandingPage() {
           <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-purple-500 to-blue-600 flex items-center justify-center shadow-[0_0_20px_rgba(139,92,246,0.5)]">
             <span className="text-white font-bold text-sm sm:text-base">W</span>
           </div>
-          <span className="text-white font-bold text-base sm:text-lg">WeatherVision</span>
+          <span className="text-white font-bold text-base sm:text-lg">TaroMausam</span>
         </div>
 
         <div className="flex items-center gap-2 sm:gap-3">
@@ -327,7 +327,7 @@ export default function LandingPage() {
 
       {/* Footer */}
       <footer className="relative z-10 border-t border-white/5 py-6 sm:py-8 px-4 sm:px-6 text-center text-white/20 text-xs sm:text-sm">
-        <p>Built with Next.js 14, Tailwind CSS, Aceternity UI, and OpenWeather API.</p>
+        <p>Built by Ayush Yadav - 7651885203 | ayushyadav212121@gmail.com</p>
       </footer>
     </div>
   );

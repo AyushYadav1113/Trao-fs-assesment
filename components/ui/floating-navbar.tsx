@@ -62,10 +62,10 @@ export function FloatingNavbar({
           {/* Logo */}
           <Link href="/" className="flex items-center gap-1.5 sm:gap-2 mr-2 sm:mr-4 pr-2 sm:pr-4 border-r border-white/10">
             <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center">
-              <span className="text-white text-[10px] sm:text-xs font-bold">W</span>
+              <span className="text-white text-[10px] sm:text-xs font-bold">T</span>
             </div>
             <span className="text-white font-semibold text-xs sm:text-sm hidden sm:block">
-              WeatherVision
+              TaroMausam
             </span>
           </Link>
 
