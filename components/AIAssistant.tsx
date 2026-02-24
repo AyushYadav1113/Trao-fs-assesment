@@ -29,14 +29,20 @@ export function AIAssistant() {
     vapi.on("speech-end", () => setIsSpeaking(false));
 
     vapiRef.current = vapi;
-    return () => vapi.stop();
+
+    return () => {
+      // IMPORTANT: cleanup must return void, not Promise
+      void vapi.stop();
+      vapiRef.current = null;
+    };
   }, []);
 
   const startCall = async () => {
     try {
-      const assistantId =
-        process.env.NEXT_PUBLIC_VAPI_ASSISTANT_ID;
-      if (!assistantId) return console.error("Missing Assitant ID");
+      const assistantId = process.env.NEXT_PUBLIC_VAPI_ASSISTANT_ID;
+      if (!assistantId) return console.error("Missing Assistant ID");
+      if (!vapiRef.current) return console.error("Vapi not initialized");
+
       await vapiRef.current.start(assistantId);
     } catch (err) {
       console.error("VAPI Start Error:", err);
@@ -45,6 +51,7 @@ export function AIAssistant() {
 
   const stopCall = async () => {
     try {
+      if (!vapiRef.current) return;
       await vapiRef.current.stop();
     } catch (err) {
       console.error("VAPI Stop Error:", err);
@@ -62,11 +69,8 @@ export function AIAssistant() {
             transition={{ duration: 0.2 }}
             className="fixed bottom-24 right-6 w-80 h-96 bg-black/90 backdrop-blur-xl border border-white/10 rounded-2xl shadow-xl z-50 flex flex-col overflow-hidden"
           >
-            {/* Header */}
             <div className="p-4 border-b border-white/10 bg-gradient-to-r from-purple-600/20 to-blue-600/20 flex justify-between items-center">
-              <h3 className="text-white text-sm font-semibold">
-                Voice Assistant
-              </h3>
+              <h3 className="text-white text-sm font-semibold">Voice Assistant</h3>
               <button
                 onClick={() => setIsOpen(false)}
                 className="text-white/40 hover:text-white"
@@ -75,18 +79,13 @@ export function AIAssistant() {
               </button>
             </div>
 
-            {/* Visual Feedback */}
             <div className="flex-1 flex items-center justify-center">
               {!isConnected && (
-                <div className="text-white/40 text-sm text-center">
-                  Ready to talk
-                </div>
+                <div className="text-white/40 text-sm text-center">Ready to talk</div>
               )}
 
               {isConnected && !isSpeaking && (
-                <div className="text-white/40 text-sm text-center">
-                  Listening...
-                </div>
+                <div className="text-white/40 text-sm text-center">Listening...</div>
               )}
 
               {isConnected && isSpeaking && (
@@ -98,7 +97,6 @@ export function AIAssistant() {
               )}
             </div>
 
-            {/* Controls */}
             <div className="p-4 border-t border-white/10 flex justify-center">
               {!isConnected ? (
                 <button
@@ -120,7 +118,6 @@ export function AIAssistant() {
         )}
       </AnimatePresence>
 
-      {/* Floating Toggle Button */}
       <motion.button
         onClick={() => setIsOpen((open) => !open)}
         className="fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full text-white shadow-lg flex items-center justify-center z-50"

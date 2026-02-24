@@ -123,9 +123,9 @@ export default function SignupPage() {
         <div className="text-center mb-6 sm:mb-8">
           <Link href="/" className="inline-flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
             <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-purple-500 to-blue-600 flex items-center justify-center shadow-[0_0_20px_rgba(139,92,246,0.5)]">
-              <span className="text-white font-bold text-base sm:text-lg">W</span>
+              <span className="text-white font-bold text-base sm:text-lg">T</span>
             </div>
-            <span className="text-white font-bold text-lg sm:text-xl">WeatherVision</span>
+            <span className="text-white font-bold text-lg sm:text-xl">TaroMausam</span>
           </Link>
           <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">Create account</h1>
           <p className="text-white/50 text-xs sm:text-sm px-4">
