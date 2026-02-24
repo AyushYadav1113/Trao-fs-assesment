@@ -1,4 +1,4 @@
-# WeatherVision
+# TaroMausam
 
 A production-ready full-stack Weather Forecasting Web Application built with Next.js 14 (App Router), Aceternity UI-inspired components, PostgreSQL, Prisma, and JWT authentication.
 
