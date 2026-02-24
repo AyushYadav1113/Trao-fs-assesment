@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Providers } from "@/components/Providers";
+import { AIAssistant } from "@/components/AIAssistant";
 
 export const metadata: Metadata = {
   title: "WeatherVision — Real-Time Weather Forecasting",
@@ -22,7 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="dark">
       <body className="bg-black text-white antialiased">
-        <Providers>{children}</Providers>
+        <Providers>
+          {children}
+          <AIAssistant />
+        </Providers>
       </body>
     </html>
   );
