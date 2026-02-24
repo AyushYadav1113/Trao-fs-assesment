@@ -106,20 +106,6 @@ NEXT_PUBLIC_APP_URL="http://localhost:3000"
 
 Get your OpenWeather API key at https://openweathermap.org/api (free tier: 60 calls/minute).
 
-### 3. Set up database
-
-Using Docker (recommended for local development):
-
-```bash
-docker run -d \
-  --name weather-db \
-  -e POSTGRES_USER=user \
-  -e POSTGRES_PASSWORD=password \
-  -e POSTGRES_DB=weather_app \
-  -p 5432:5432 \
-  postgres:15
-```
-
 Run Prisma migrations:
 
 ```bash
@@ -127,7 +113,7 @@ npx prisma migrate dev --name init
 npx prisma generate
 ```
 
-### 4. Run locally
+### 3. Run locally
 
 ```bash
 npm run dev
