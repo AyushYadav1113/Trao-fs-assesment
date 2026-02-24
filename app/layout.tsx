@@ -4,12 +4,12 @@ import { Providers } from "@/components/Providers";
 import { AIAssistant } from "@/components/AIAssistant";
 
 export const metadata: Metadata = {
-  title: "WeatherVision — Real-Time Weather Forecasting",
+  title: "TaroMausam — Real-Time Weather Forecasting",
   description:
     "A production-ready weather forecasting app with real-time data, 5-day forecasts, air quality index, and interactive maps.",
   keywords: ["weather", "forecast", "air quality", "temperature", "climate"],
   openGraph: {
-    title: "WeatherVision",
+    title: "TaroMausam",
     description: "Real-Time Weather Forecasting",
     type: "website",
   },
